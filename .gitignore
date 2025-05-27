@@ -1,0 +1,11 @@
+# Dist
+dist
+
+# Node
+node_modules/
+
+# Prisma
+.prisma/
+
+# Keep environment variables out of version control
+.env

@@ -1,0 +1,12 @@
+# Dist
+dist
+
+# Node
+node_modules/
+package-lock.json
+
+# Prisma
+.prisma/
+
+# Keep environment variables out of version control
+.env
