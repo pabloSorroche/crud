@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+    app:
+        build: .
+        ports:
+            - "80:3000"
+        environment:
+            - DATABASE_URL=postgresql://postgres:PCPV1305199125renm@db:5432/crud_app_dev?schema=public
+        depends_on:
+            - db
+
+    db:
+        image: postgres:17
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: PCPV1305199125renm
+            POSTGRES_DB: crud_app_dev
+        ports:
+            - "5433:5432"
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+
+volumes:
+    postgres-data:
