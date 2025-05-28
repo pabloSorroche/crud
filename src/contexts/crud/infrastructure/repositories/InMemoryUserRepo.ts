@@ -1,5 +1,5 @@
-import { User } from 'domain/models/User';
-import { UserRepository } from 'domain/repositories/UserRepository';
+import { User } from 'contexts/crud/domain/models/User';
+import { UserRepository } from 'contexts/crud/domain/repositories/UserRepository';
 
 export class InMemoryUserRepo implements UserRepository {
   private users: User[] = [];

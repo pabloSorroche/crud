@@ -1,4 +1,4 @@
-import { CreateUser } from 'application/use-cases/CreateUser';
+import { CreateUser } from 'contexts/crud/application/use-cases/CreateUser';
 
 import { InMemoryUserRepo } from 'infrastructure/repositories/InMemoryUserRepo';
 

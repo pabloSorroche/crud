@@ -1,4 +1,4 @@
-import { UserRepository } from 'domain/repositories/UserRepository';
+import { UserRepository } from 'contexts/crud/domain/repositories/UserRepository';
 
 export class GetUserByFilter {
   constructor(private readonly userRepo: UserRepository) {}

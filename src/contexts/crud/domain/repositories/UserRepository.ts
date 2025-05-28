@@ -1,4 +1,4 @@
-import { User } from 'domain/models/User';
+import { User } from 'contexts/crud/domain/models/User';
 
 export interface UserRepository {
   create(user: User): Promise<void>;

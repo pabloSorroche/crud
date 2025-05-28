@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 
-import { CreateUser } from 'application/use-cases/CreateUser';
-import { DeleteUser } from 'application/use-cases/DeleteUser';
-import { GetAllUsers } from 'application/use-cases/GetAllUsers';
-import { GetUser } from 'application/use-cases/GetUser';
-import { UpdateUser } from 'application/use-cases/UpdateUser';
+import { CreateUser } from 'contexts/crud/application/use-cases/CreateUser';
+import { DeleteUser } from 'contexts/crud/application/use-cases/DeleteUser';
+import { GetAllUsers } from 'contexts/crud/application/use-cases/GetAllUsers';
+import { GetUser } from 'contexts/crud/application/use-cases/GetUser';
+import { UpdateUser } from 'contexts/crud/application/use-cases/UpdateUser';
 
 export class UserController {
   constructor(

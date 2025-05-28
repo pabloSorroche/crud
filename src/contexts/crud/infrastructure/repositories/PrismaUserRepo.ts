@@ -1,7 +1,7 @@
-import { User } from 'domain/models/User';
-import { UserRepository } from 'domain/repositories/UserRepository';
+import { User } from 'contexts/crud/domain/models/User';
+import { UserRepository } from 'contexts/crud/domain/repositories/UserRepository';
 
-import prisma from 'infrastructure/db/PrismaClient';
+import prisma from 'contexts/crud/infrastructure/db/PrismaClient';
 
 export class PrismaUserRepo implements UserRepository {
   async findById(id: string): Promise<User | null> {

@@ -1,6 +1,6 @@
 import express from 'express';
 
-import userRouter from './interfaces/http/routes/userRoutes';
+import userRouter from './contexts/crud/interfaces/http/routes/userRoutes';
 
 const app = express();
 const port = process.env.PORT ?? '9001';

@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 
-import { User } from 'domain/models/User';
-import { UserRepository } from 'domain/repositories/UserRepository';
+import { User } from 'contexts/crud/domain/models/User';
+import { UserRepository } from 'contexts/crud/domain/repositories/UserRepository';
 
 export class CreateUser {
   constructor(private readonly userRepo: UserRepository) {}
