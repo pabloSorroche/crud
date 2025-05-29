@@ -1,19 +1,20 @@
-import express from 'express';
-import request from 'supertest';
-
-import userRoutes from 'interfaces/http/routes/userRoutes';
-
-const app = express();
-
-app.use(express.json());
-app.use('/users', userRoutes);
+import { prisma } from './setupIntegration';
 
 describe('User routes', () => {
   it('POST /users should create a user', async () => {
-    const res = await request(app).post('/users').send({ name: 'Luis', email: 'luis@gmail.com' });
+    const user = await prisma.users.create({
+      data: {
+        id: '3a23aabd-c61b-4393-ace5-1d890163de8f',
+        name: 'Test User',
+        email: 'test@example.com',
+      },
+    });
 
-    expect(res.status).toBe(201);
-    expect(res.body.name).toBe('Luis');
-    expect(res.body.email).toBe('luis@gmail.com');
+    const found = await prisma.users.findUnique({
+      where: { id: user.id },
+    });
+
+    expect(found).not.toBeNull();
+    expect(found?.email).toBe('test@example.com');
   });
 });

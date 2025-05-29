@@ -1,6 +1,6 @@
 import { CreateUser } from 'contexts/crud/application/use-cases/CreateUser';
 
-import { InMemoryUserRepo } from 'infrastructure/repositories/InMemoryUserRepo';
+import { InMemoryUserRepo } from 'contexts/crud/infrastructure/repositories/InMemoryUserRepo';
 
 describe('CreateUser Use Case', () => {
   it('should create a user correctly', async () => {
