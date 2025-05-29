@@ -29,6 +29,16 @@ const controller = new UserController(
 router.use(authMiddleware);
 
 router.post('/', authorizeRoles([UserRole.ADMIN]), controller.create);
+
+/**
+ * @swagger
+ * /users:
+ *  get:
+ *    summary: Get all users
+ *    responses:
+ *      200:
+ *        description: List of users
+ */
 router.get('/', authorizeRoles([UserRole.ADMIN, UserRole.USER]), controller.getAll);
 router.get('/:id', authorizeRoles([UserRole.ADMIN, UserRole.USER]), controller.get);
 router.put('/:id', authorizeRoles([UserRole.ADMIN]), controller.update);
