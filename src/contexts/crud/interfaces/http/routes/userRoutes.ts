@@ -33,11 +33,33 @@ router.post('/', authorizeRoles([UserRole.ADMIN]), controller.create);
 /**
  * @swagger
  * /users:
- *  get:
- *    summary: Get all users
- *    responses:
- *      200:
- *        description: List of users
+ *   get:
+ *     summary: Retrieve a list of all users.
+ *     tags:
+ *       - Users
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: A list of users.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/User'
+ *       404:
+ *         description: Users not found or error occurred.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: Error message
+ *     description: |
+ *       Requires authorization with roles ADMIN or USER.
  */
 router.get('/', authorizeRoles([UserRole.ADMIN, UserRole.USER]), controller.getAll);
 router.get('/:id', authorizeRoles([UserRole.ADMIN, UserRole.USER]), controller.get);
